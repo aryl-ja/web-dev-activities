@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Calculator</title>
+    <script src="./js/numbers.js"></script>
+    <script src="./js/operators.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('back.jpg') no-repeat center center fixed; /* Add your background image here */
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form[name="calculator"] {
+            background-color: rgba(202, 234, 252, 0.8); /* Semi-transparent white overlay */
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 305px;
+        }
+
+        .display-container {
+            display: flex;
+            justify-content: space-between; /* Align display and operator */
+            align-items: center; /* Vertically align */
+            margin-bottom: 1px;
+            padding: 5px;
+        }
+
+        #display {
+            width: 150px;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            text-align: right;
+            background-color: #e0f7fa;
+            color: #333;
+            border: 2px solid #00838f;
+            outline: none;
+        }
+
+        #operator {
+            width: 50px;
+            font-size: 1.5rem;
+            text-align: center;
+            color: #00838f;
+            background-color: #e0f7fa;
+            border: 2px solid #00838f;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        
+            button {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50%; /* Change to 50% for circular buttons */
+    background-color: #4fc3f7;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+        button:hover {
+            background-color: #29b6f6;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        button[onclick*="plus"], button[onclick*="minus"],
+        button[onclick*="times"], button[onclick*="divide"] {
+            background-color: #0288d1;
+        }
+
+        button[onclick*="equal"] {
+            background-color: #0288d1;
+        }
+
+        button[onclick*="equal"]:hover {
+            background-color: #0277bd;
+        }
+    </style>
+</head>
+<body>
+    <form name="calculator">
+        <div class="display-container">
+            <input type="text" id="display" value="0" readonly>
+            <input type="text" id="operator" readonly>
+        </div>
+        <input type="text" id="display2" readonly style="display:none;">
+        <br><br>
+        <button type="button" onclick="seven()">7</button>
+        <button type="button" onclick="eight()">8</button>
+        <button type="button" onclick="nine()">9</button>
+        <button type="button" onclick="plus()">+</button>
+        <br><br>
+        <button type="button" onclick="four()">4</button>
+        <button type="button" onclick="five()">5</button>
+        <button type="button" onclick="six()">6</button>
+        <button type="button" onclick="minus()">-</button>
+        <br><br>
+        <button type="button" onclick="one()">1</button>
+        <button type="button" onclick="two()">2</button>
+        <button type="button" onclick="three()">3</button>
+        <button type="button" onclick="times()">*</button>
+        <br><br>
+        <button type="button" onclick="zero()">0</button>
+        <button type="button" onclick="dot()">.</button>
+        <button type="button" onclick="equals()">=</button>
+        <button type="button" onclick="divide()">/</button>
+        <br><br>
+    </form>
+</body>
+</html>
